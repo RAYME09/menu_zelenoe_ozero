@@ -1,0 +1,2078 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#102c2b"><title>Зеленое озеро — Помощник официанта</title><style>
+:root{--pine:#102c2b;--pine2:#193b38;--ivory:#f6f3eb;--cream:#fffdf8;--gold:#baa47d;--ink:#172c29;--muted:#64736f;--line:#d7d4c8}*{box-sizing:border-box}body{margin:0;background:var(--ivory);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}button,input{font:inherit}button{cursor:pointer}#app{min-height:100dvh}header{background:var(--pine);color:var(--ivory);padding:17px 18px 14px;position:sticky;top:0;z-index:10;box-shadow:0 5px 18px #0a22201c}header .top{max-width:960px;margin:auto;display:flex;align-items:center;gap:12px}header .brand{flex:1}.smallcaps{font-size:10px;letter-spacing:.24em;color:var(--gold);text-transform:uppercase}.brand strong{display:block;font:500 23px Georgia,serif;letter-spacing:.045em}header button{background:transparent;border:1px solid #b7a78270;color:#f7f2e6;border-radius:10px;padding:9px 12px}.wrap{max-width:960px;margin:auto;padding:18px 16px 90px}.hero{border:1px solid #ad9870;background:linear-gradient(150deg,#102c2b,#1c4540);border-radius:20px;padding:29px 20px;text-align:center;color:#f6f3eb;box-shadow:0 9px 24px #102c2b18}.hero img{width:138px;height:138px;object-fit:contain;background:#f9f7f2;border-radius:50%;margin-bottom:14px}.hero h1{font:400 33px Georgia,serif;letter-spacing:.055em;margin:6px 0}.hero p{font-size:12px;letter-spacing:.21em;color:#d1c29e}.line{width:90px;height:1px;background:var(--gold);margin:17px auto}.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:18px}.tile{background:#fffdf8;border:1px solid var(--line);border-radius:16px;padding:23px 15px;text-align:left;color:var(--ink);box-shadow:0 6px 15px #172c2910}.tile:active,.entry:active{transform:scale(.995)}.tile span{font-size:32px}.tile b{display:block;font:500 23px Georgia,serif;margin:10px 0 7px}.tile small{color:var(--muted)}.tile.wide{grid-column:span 2}.tile .arrow{float:right;color:#947b4c}.sectionTitle{font:400 29px Georgia,serif;margin:22px 0 12px}.sub{color:var(--muted);font-size:13px;line-height:1.55}.crumb{font-size:12px;color:var(--muted);margin:10px 0 4px}.crumb button{border:0;padding:3px 6px 3px 0;background:none;color:var(--pine);text-decoration:underline}.categorygrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.cat{background:#fffdf8;border:1px solid var(--line);border-radius:12px;text-align:left;padding:16px 13px;color:var(--ink);min-height:80px}.cat strong{display:block;font-size:15px;line-height:1.25}.cat small{color:var(--muted);display:block;margin-top:9px}.search{display:flex;align-items:center;background:white;border:1px solid var(--line);border-radius:13px;margin:13px 0;padding:0 12px;gap:10px}.search input{border:0;outline:0;padding:13px 0;width:100%;background:transparent;color:var(--ink)}.entry{background:#fffdf8;border:1px solid var(--line);border-radius:12px;margin:9px 0;overflow:hidden}.entry button{background:none;border:none;display:flex;align-items:center;text-align:left;width:100%;padding:16px 14px;gap:12px;color:inherit}.entry .name{flex:1;line-height:1.4;font-weight:600}.entry .price{white-space:nowrap;font-size:14px;color:#78623e;font-weight:650}.entry .description{padding:0 15px 16px;color:#42504d;line-height:1.6;font-size:14px}.hint{margin-top:10px;font-size:12px;padding:10px 12px;border-left:3px solid var(--gold);background:#f0ece2;color:#645c4f}.tag{font-size:11px;color:#857552;letter-spacing:.06em}.back{background:none;border:0;color:var(--pine);padding:10px 0;font-weight:600}.foot{padding:18px;color:var(--muted);text-align:center;font-size:12px}.winepage{background:white;border:1px solid var(--line);padding:10px;border-radius:14px;margin:15px 0}.winepage img{width:100%;display:block;border-radius:9px}.winepage small{display:block;text-align:center;color:var(--muted);padding:9px}.chiprow{display:flex;gap:8px;flex-wrap:wrap}.chip{background:#eae5d7;border:1px solid #d1c4a9;border-radius:20px;padding:8px 13px;color:var(--ink);font-size:12px}.note{background:#eee8d9;border-left:3px solid var(--gold);padding:11px 13px;border-radius:6px;line-height:1.5;font-size:13px;margin:13px 0}.pill{background:#e3ebdf;color:#315649;border-radius:30px;padding:4px 9px;font-size:11px}.count{font-size:12px;color:var(--muted);margin:8px 0}.empty{color:var(--muted);padding:22px;text-align:center}#viewer{display:none;position:fixed;inset:0;z-index:40;background:#071411ed;overflow:auto;padding:14px}#viewer img{display:block;width:min(1200px,100%);height:auto;margin:48px auto 20px}#viewer button{position:fixed;top:12px;right:15px;background:#fffdf8;border:0;border-radius:12px;padding:12px 16px;font-weight:bold}.copyright{text-align:center;color:#a8b4ad;margin:30px 0;font-size:11px}.selected{background:var(--pine);color:var(--cream)}@media(min-width:700px){.tiles{grid-template-columns:repeat(2,1fr)}.categorygrid{grid-template-columns:repeat(3,1fr)}.entries{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.hero h1{font-size:42px}}
+
+/* Плавное появление разделов и раскрытие карточек */
+main.wrap{animation:page-enter .34s cubic-bezier(.2,.75,.25,1) both}
+@keyframes page-enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.tile,.cat,.entry{transition:background-color .22s ease,border-color .22s ease,box-shadow .24s ease,transform .24s ease}
+.tile:hover,.cat:hover{transform:translateY(-2px);box-shadow:0 9px 22px #102c2b12}
+.entry.is-open{border-color:#c1ab80;box-shadow:0 6px 18px #102c2b12}
+.entry .entry-toggle{color:#8b7754;font-size:20px;line-height:1;display:inline-flex;transition:transform .33s ease}
+.entry.is-open .entry-toggle{transform:rotate(45deg)}
+.accordion{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .36s cubic-bezier(.2,.7,.2,1),opacity .3s ease;pointer-events:none}
+.entry.is-open .accordion{grid-template-rows:1fr;opacity:1;pointer-events:auto}
+.accordion-inner{min-height:0;overflow:hidden}
+.subtype{font-size:11px;letter-spacing:.035em;color:#8c7450;margin:0 0 6px}
+@media(prefers-reduced-motion:reduce){main.wrap{animation:none}.accordion,.entry .entry-toggle,.tile,.cat,.entry{transition:none}}
+</style></head><body><div id="app"></div><div id="viewer"><button onclick="document.getElementById('viewer').style.display='none'">Закрыть ✕</button><img id="bigpic" alt="Страница винной карты"></div><script>
+const ITEMS=[
+  {
+    "section": "Кухня",
+    "category": "Холодные закуски",
+    "name": "Печеный баклажан со страчателлой и томатным песто",
+    "price": "1480",
+    "description": "Печёный баклажан, страчателла, томатный песто, слайсы огурца."
+  },
+  {
+    "section": "Кухня",
+    "category": "Холодные закуски",
+    "name": "Тар-тар из тунца с бурратой и медово-лимонной заправкой",
+    "price": "1690",
+    "description": "Тунец, буррата, апельсин, дижонская горчица, желток, табаско, оливковое масло, уксус, лимонный сок и мёд. Аллергены: рыба, молоко, яйца, горчица."
+  },
+  {
+    "section": "Кухня",
+    "category": "Холодные закуски",
+    "name": "Тар-тар из лосося в азиатском стиле и муссом из юдзу",
+    "price": "1850",
+    "description": "Лосось, корнишоны, вяленые томаты, кунжут, редис; унаги, рисовый уксус и оливковое масло. Мусс: сливки, юдзу, лайм, сахар."
+  },
+  {
+    "section": "Кухня",
+    "category": "Холодные закуски",
+    "name": "Паштет из утиной печени с соусом дикая брусника",
+    "price": "650",
+    "description": "Утиная печень, шалот, чеснок, сливки, сливочное масло, портвейн, бриошь, тыквенные семечки, брусничный соус, малина."
+  },
+  {
+    "section": "Кухня",
+    "category": "Холодные закуски",
+    "name": "Карпаччо из говядины с мороженым из пастернака",
+    "price": "3040",
+    "description": "Говяжья вырезка, оливковое масло, пармезан, пастернак, сливки, кедровые орехи, песто. Аллергены: молоко, орехи; возможны следы глютена."
+  },
+  {
+    "section": "Кухня",
+    "category": "Холодные закуски",
+    "name": "Тар-тар из говядины с яйцом су-вид и пармезаном",
+    "price": "2615",
+    "description": "Говядина, каперсы и корнишоны, шалот, майонез, кетчуп, вустерский соус, табаско, яйцо, пармезан, чиабатта. Аллергены: яйца, рыба, глютен, молоко, горчица."
+  },
+  {
+    "section": "Кухня",
+    "category": "Холодные закуски",
+    "name": "Ростбиф с эстрагоновым соусом и пеканом",
+    "price": "1330",
+    "description": "Ростбиф, ремулад с эстрагоном, пекан, перепелиное яйцо, оливки каламата, зелёное масло, бальзамический крем. Аллергены: яйца, орехи, горчица; возможно сельдерей."
+  },
+  {
+    "section": "Кухня",
+    "category": "Холодные закуски",
+    "name": "Брускетта капрезе",
+    "price": "1215",
+    "description": "Чиабатта, песто, моцарелла, томаты, кедровые орехи, базилик, бальзамический крем. Аллергены: глютен, молоко, орехи."
+  },
+  {
+    "section": "Кухня",
+    "category": "Холодные закуски",
+    "name": "Брускетта с цукини и креветкой",
+    "price": "1285",
+    "description": "Чиабатта, страчателла, креветки, цукини, чеснок, белое вино, зелёное масло. Аллергены: глютен, молоко, ракообразные."
+  },
+  {
+    "section": "Кухня",
+    "category": "Салаты",
+    "name": "Зеленый микс со шпинатом, кейлом и авокадо с тыквенными семечками",
+    "price": "1150",
+    "description": "Шпинат, кейл, авокадо, тыквенные семечки."
+  },
+  {
+    "section": "Кухня",
+    "category": "Салаты",
+    "name": "Салат с печенью и хрустящими баклажанами",
+    "price": "995",
+    "description": "Хрустящие баклажаны в крахмале, куриная печень, микс салатов, кешью, соус свит чили. В гайде есть расхождение: заголовок говорит об утиной печени, описание — о куриной; уточнить."
+  },
+  {
+    "section": "Кухня",
+    "category": "Салаты",
+    "name": "Греческий салат с сыром фета и оливками каламата",
+    "price": "1275",
+    "description": "Помидоры, огурцы, перец рамиро, красный лук, фета, орегано, винегрет из оливкового масла, бальзамического уксуса, крема и мёда."
+  },
+  {
+    "section": "Кухня",
+    "category": "Салаты",
+    "name": "Фрикассе с креветками и кальмарами в сопровождении эспумы шафран",
+    "price": "2330",
+    "description": "Креветки, кальмар, сливочно-томатный соус пиперад, романо и шафрановая эспума. Аллергены: ракообразные, моллюски, молоко."
+  },
+  {
+    "section": "Кухня",
+    "category": "Салаты",
+    "name": "Микс салата с обжаренным цыпленком, томатами, карамелизованными грибами и ореховым соусом",
+    "price": "1575",
+    "description": "В гайде указаны цыплёнок, томаты, карамелизованные груши и ореховый соус. В гостевом меню указаны грибы — состав требует уточнения."
+  },
+  {
+    "section": "Кухня",
+    "category": "Супы",
+    "name": "Крем-суп из тыквы баттернат с авокадо и миндалем",
+    "price": "875",
+    "description": "Тыква баттернат, сливки, молоко, сливочное масло, карамелизованные яблоки, тыквенные семечки, авокадо. В гайде указан этот состав, но в гостевом меню добавлен миндаль — уточнить подачу. Аллерген: молоко; возможны орехи."
+  },
+  {
+    "section": "Кухня",
+    "category": "Супы",
+    "name": "Рыбный суп консоме с равиоли из краба",
+    "price": "1950",
+    "description": "Рыбный бульон, краб, равиоли (мука, желток), картофель, морковь, зелень, сливки. Аллергены: рыба, ракообразные, глютен, яйца, молоко."
+  },
+  {
+    "section": "Кухня",
+    "category": "Супы",
+    "name": "Том-ям на кокосовом молоке с креветками и тайским рисом",
+    "price": "1450",
+    "description": "В гайде: куриное бедро, креветки, кальмар, томаты, вешенки, кинза, рис. Кокосовое молоко в гайде не уточнено — сверить рецептуру."
+  },
+  {
+    "section": "Кухня",
+    "category": "Супы",
+    "name": "Борщ с томленой говядиной, с бородинским хлебом, смальцем и сметаной",
+    "price": "1150",
+    "description": "Говяжий бульон и щёчки, свёкла, лук, морковь, чеснок, капуста, укроп, сметана, смалец, бородинский хлеб."
+  },
+  {
+    "section": "Кухня",
+    "category": "Закуски в стол",
+    "name": "Ассорти сезонных овощей",
+    "price": "1500",
+    "description": "Помидоры, огурцы, болгарский перец, петрушка, укроп."
+  },
+  {
+    "section": "Кухня",
+    "category": "Закуски в стол",
+    "name": "Ассорти из европейских сыров",
+    "price": "3100",
+    "description": "Тет-де-муан, пармезан, брилья-саварен, кешью, миндаль, мёд, апельсиновая паста, малина, голубика."
+  },
+  {
+    "section": "Кухня",
+    "category": "Закуски в стол",
+    "name": "Ассорти северных рыб",
+    "price": "3600",
+    "description": "Слабосолёные муксун, омуль, сиг (по гостевому меню). В гайде вместо муксуна указана нельма. Гарнир: каперсы, сливочный сыр с васаби, красная икра, лимон, зелёное масло."
+  },
+  {
+    "section": "Кухня",
+    "category": "Закуски в стол",
+    "name": "Сало домашнее с бородинским хлебом, горчицей и хреном",
+    "price": "640",
+    "description": "Два вида сала, бородинский хлеб, горчица, хрен, зелёный лук."
+  },
+  {
+    "section": "Кухня",
+    "category": "Горячие закуски",
+    "name": "Жареный сыр бри с ягодным соусом",
+    "price": "2150",
+    "description": "Панированный сыр бри, малиновый джем, сливочное масло, свежая малина, микс салатов."
+  },
+  {
+    "section": "Кухня",
+    "category": "Горячие закуски",
+    "name": "Эскарго по-бургундски в ракушке с чиабаттой",
+    "price": "1950",
+    "description": "Шесть улиток: со сливочно-чесночным соусом, сыром грана падано и пармезаном, трюфельным пате. Подаются с чиабаттой."
+  },
+  {
+    "section": "Кухня",
+    "category": "Горячие закуски",
+    "name": "Креветки al ajillo с чесноком и перцем чили",
+    "price": "1150",
+    "description": "Креветки в масле с чесноком, хлопьями чили, копчёной паприкой и лимонным соком. Пикантное блюдо."
+  },
+  {
+    "section": "Кухня",
+    "category": "Горячие закуски",
+    "name": "Плато морепродуктов на гриле",
+    "price": "4950",
+    "description": "Креветки, кальмары, морские гребешки."
+  },
+  {
+    "section": "Кухня",
+    "category": "Горячие мясные блюда",
+    "name": "Телячьи щечки с полентой и муссом из горгонзолы",
+    "price": "2085",
+    "description": "Телячьи щёчки, соус бордолез, полента с молоком и пармезаном, мусс горгонзолы, апельсиновый гель, пекан. Аллергены: молоко, орехи."
+  },
+  {
+    "section": "Кухня",
+    "category": "Горячие мясные блюда",
+    "name": "Утиная ножка конфи с муссом из цветной капусты и ореховым соусом",
+    "price": "1560",
+    "description": "В гайде: утиная ножка су-вид, муслин из цветной капусты, апельсин, грейпфрут, миндаль, апельсиновый гель. Способ приготовления и ореховый соус уточнить. Аллергены: орехи; возможно молоко."
+  },
+  {
+    "section": "Кухня",
+    "category": "Горячие мясные блюда",
+    "name": "Бефстроганов в авторской подаче нашего шефа",
+    "price": "1800",
+    "description": "Говядина, лук, чеснок, тимьян, шампиньоны, картофельное пюре с трюфелем, солёные огурцы, сливки, вустерский соус."
+  },
+  {
+    "section": "Кухня",
+    "category": "Горячие рыбные блюда",
+    "name": "Филе судака с овощами на пару и соусом бер-блан",
+    "price": "1550",
+    "description": "Судак, кукуруза, горошек, редис, брокколи. Соус бер-блан: белое вино, лимон, шалот, сливочное масло."
+  },
+  {
+    "section": "Кухня",
+    "category": "Горячие рыбные блюда",
+    "name": "Филе палтуса глазури с шиитаке и трюфельным соусом",
+    "price": "2275",
+    "description": "Палтус, шиитаке, шампиньоны, картофель, грибной велюте, трюфельная паста и масло, чипс из шпината. Аллергены: рыба, молоко; возможно глютен."
+  },
+  {
+    "section": "Кухня",
+    "category": "Горячие рыбные блюда",
+    "name": "Стейк из лосося с ризотто и соусом биск",
+    "price": "2625",
+    "description": "Лосось, рис арборио, биск из креветок, сливочный сыр, огурец, пармезан, хлебный чипс. Аллергены: рыба, ракообразные, молоко, глютен, сульфиты."
+  },
+  {
+    "section": "Кухня",
+    "category": "Пицца",
+    "name": "Фокачча с травами и пармезаном",
+    "price": "550",
+    "description": "Тесто на муке манитоба с дрожжами и оливковым маслом, травы, пармезан. Подаётся с соусом пилати."
+  },
+  {
+    "section": "Кухня",
+    "category": "Пицца",
+    "name": "Фокачча с горгонзолой",
+    "price": "650",
+    "description": "Тесто на муке манитоба, горгонзола, соус пилати."
+  },
+  {
+    "section": "Кухня",
+    "category": "Пицца",
+    "name": "Маргарита со страчателлой",
+    "price": "1255",
+    "description": "Соус пилати, страчателла, моцарелла, зелень."
+  },
+  {
+    "section": "Кухня",
+    "category": "Пицца",
+    "name": "Пицца с грушей и горгонзолой",
+    "price": "1695",
+    "description": "Сливки, горгонзола, груши, кешью, миндаль, сухофрукты, моцарелла, зелень."
+  },
+  {
+    "section": "Кухня",
+    "category": "Пицца",
+    "name": "Пепперони с халапеньо",
+    "price": "1450",
+    "description": "Соус пилати, пепперони, моцарелла, халапеньо."
+  },
+  {
+    "section": "Кухня",
+    "category": "Пицца",
+    "name": "Четыре сыра",
+    "price": "1755",
+    "description": "Сливочный соус, чеддер, моцарелла, горгонзола, пармезан."
+  },
+  {
+    "section": "Кухня",
+    "category": "Пицца",
+    "name": "Пицца с вялеными томатами и пармской ветчиной",
+    "price": "1950",
+    "description": "В гайде: томатный соус, пармская ветчина, моцарелла, черри, песто, базилик. Вяленые томаты в гайде не подтверждены."
+  },
+  {
+    "section": "Кухня",
+    "category": "Паста",
+    "name": "Паста с крабом и соусом путанеско",
+    "price": "2100",
+    "description": "Тальятелле, краб, томатный соус пилати, анчоусы, каперсы, оливки каламата, оливковое масло, петрушка."
+  },
+  {
+    "section": "Кухня",
+    "category": "Паста",
+    "name": "Спагетти с морепродуктами",
+    "price": "2000",
+    "description": "Вонголе, мидии, креветки, кальмар, гребешки, шалот, чеснок, томаты, белое вино, рыбный бульон, сливочное масло, петрушка, спагетти."
+  },
+  {
+    "section": "Кухня",
+    "category": "Паста",
+    "name": "Тальятелле с креветками и кальмарами",
+    "price": "1450",
+    "description": "Аргентинские креветки, кальмар, пилати, биск, сливки, шалот, чеснок, унаги, базилик, пармезан, шрирача, травы."
+  },
+  {
+    "section": "Кухня",
+    "category": "Паста",
+    "name": "Ригатони с томлеными говяжьими щечками и вялеными томатами",
+    "price": "1500",
+    "description": "Говяжьи щёчки, демиглас, ригатони, вяленые томаты, базилик, сливочное масло, шалот, шпинат, чеснок, пармезан."
+  },
+  {
+    "section": "Кухня",
+    "category": "Аквариум",
+    "name": "Ёж морской",
+    "price": "550",
+    "description": "Морской ёж с перепелиным яйцом, огурцом и соусом понзу (соевый соус, рисовый уксус, водоросли комбу, стружка тунца)."
+  },
+  {
+    "section": "Кухня",
+    "category": "Аквариум",
+    "name": "Икра чёрная осетровая",
+    "price": "6000",
+    "description": "В гайде: 50 г икры и три блина."
+  },
+  {
+    "section": "Кухня",
+    "category": "Аквариум",
+    "name": "Икра красная",
+    "price": "3500",
+    "description": "В гайде: 50 г икры лосося и три блина."
+  },
+  {
+    "section": "Кухня",
+    "category": "Аквариум",
+    "name": "Икра щучья",
+    "price": "2100",
+    "description": "В гайде: 50 г икры со сметаной и луком шалот, три блина."
+  },
+  {
+    "section": "Кухня",
+    "category": "Аквариум",
+    "name": "Устрица муроцу",
+    "price": "800",
+    "description": "Состав и подача этой конкретной устрицы в гайде не указаны."
+  },
+  {
+    "section": "Кухня",
+    "category": "Аквариум",
+    "name": "Устрица розовая джоли",
+    "price": "700",
+    "description": "Состав и подача этой конкретной устрицы в гайде не указаны."
+  },
+  {
+    "section": "Кухня",
+    "category": "Аквариум",
+    "name": "Устрица императорская",
+    "price": "460",
+    "description": "Состав и подача этой конкретной устрицы в гайде не указаны."
+  },
+  {
+    "section": "Кухня",
+    "category": "Аквариум",
+    "name": "Нога камчатского краба (100 грамм)",
+    "price": "2900",
+    "description": "В гайде упомянута подача в горячем или холодном виде."
+  },
+  {
+    "section": "Кухня",
+    "category": "Аквариум",
+    "name": "Запеченная фаланга краба (100 грамм)",
+    "price": "2300",
+    "description": "Краб, соус на выбор: сливочный термидор, васаби или чёрный перец."
+  },
+  {
+    "section": "Кухня",
+    "category": "Блюда на гриле",
+    "name": "Стейк рибай категории Прайм (100 грамм)",
+    "price": "3050",
+    "description": "Мраморная говядина из толстого края. Уточнить степень прожарки."
+  },
+  {
+    "section": "Кухня",
+    "category": "Блюда на гриле",
+    "name": "Стейк стриплойн категории Прайм (100 грамм)",
+    "price": "2300",
+    "description": "Мраморная говядина из тонкого края. Уточнить степень прожарки."
+  },
+  {
+    "section": "Кухня",
+    "category": "Блюда на гриле",
+    "name": "Говяжья вырезка категории Прайм (100 грамм)",
+    "price": "2950",
+    "description": "Центральная часть говяжьей вырезки; в гайде описана как шатобриан. Подача с бордолезом, степень прожарки уточняется."
+  },
+  {
+    "section": "Кухня",
+    "category": "Блюда на гриле",
+    "name": "Фермерский цыпленок гриль с печеными томатами и соусом ткемали",
+    "price": "2250",
+    "description": "Подробного состава именно этого блюда в гайде нет."
+  },
+  {
+    "section": "Кухня",
+    "category": "Блюда на гриле",
+    "name": "Люля-кебаб из телятины",
+    "price": "1350",
+    "description": "Телятина, телячий жир, лук, соль, перец; домашняя аджика."
+  },
+  {
+    "section": "Кухня",
+    "category": "Блюда на гриле",
+    "name": "Люля-кебаб из баранины",
+    "price": "1850",
+    "description": "Баранина, курдюк, лук, соль, перец; домашняя аджика."
+  },
+  {
+    "section": "Кухня",
+    "category": "Блюда на гриле",
+    "name": "Каре ягненка",
+    "price": "1650",
+    "description": "Ягнёнок на гриле, домашняя аджика. Уточнить наличие жира."
+  },
+  {
+    "section": "Кухня",
+    "category": "Блюда на гриле",
+    "name": "Телячья корейка",
+    "price": "1600",
+    "description": "Телятина на гриле без жирка, домашняя аджика."
+  },
+  {
+    "section": "Кухня",
+    "category": "Блюда на гриле",
+    "name": "Дорадо / сибас филе на гриле",
+    "price": "2800",
+    "description": "Подробного состава в гайде нет."
+  },
+  {
+    "section": "Кухня",
+    "category": "Гарниры",
+    "name": "Спаржа на гриле",
+    "price": "1850",
+    "description": "Зелёная спаржа на гриле."
+  },
+  {
+    "section": "Кухня",
+    "category": "Гарниры",
+    "name": "Пряный рис",
+    "price": "350",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Гарниры",
+    "name": "Картофельное пюре с нотками трюфеля",
+    "price": "550",
+    "description": "Картофельное пюре с трюфельным маслом и пастой."
+  },
+  {
+    "section": "Кухня",
+    "category": "Гарниры",
+    "name": "Овощи на гриле",
+    "price": "650",
+    "description": "Баклажан, болгарский перец, цукини, картофель черри, вешенки."
+  },
+  {
+    "section": "Кухня",
+    "category": "Гарниры",
+    "name": "Домашний картофель фри",
+    "price": "500",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Гарниры",
+    "name": "Картофель черри на гриле",
+    "price": "450",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Десерты",
+    "name": "Фисташковый мильфей с малиной",
+    "price": "1150",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Десерты",
+    "name": "Баскский чизкейк с манго и маракуйей",
+    "price": "850",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Десерты",
+    "name": "Анна Павлова с чёрной смородиной",
+    "price": "650",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Десерты",
+    "name": "Мини-шу",
+    "price": "550",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Десерты",
+    "name": "Медовик с абрикосовым кремом, пастилой и лимонным гелем",
+    "price": "650",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Десерты",
+    "name": "Мороженое собственного приготовления",
+    "price": "250",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Десерты",
+    "name": "Сорбет собственного приготовления",
+    "price": "250",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Десерты",
+    "name": "Хрустящий рожок для мороженого",
+    "price": "200",
+    "description": ""
+  },
+  {
+    "section": "Кухня",
+    "category": "Соусы",
+    "name": "Перечный",
+    "price": "",
+    "description": "Сливки, перец, унаги, демиглас, соль; немного острый."
+  },
+  {
+    "section": "Кухня",
+    "category": "Соусы",
+    "name": "Томатный пилати",
+    "price": "",
+    "description": "Помидоры, соль, сахар, базилик, оливковое масло."
+  },
+  {
+    "section": "Кухня",
+    "category": "Соусы",
+    "name": "Грибной",
+    "price": "",
+    "description": "Белые грибы, вешенки, шампиньоны, сливки, чеснок, соль, перец, демиглас, петрушка."
+  },
+  {
+    "section": "Кухня",
+    "category": "Соусы",
+    "name": "Ткемали",
+    "price": "",
+    "description": "Красный лук, кинза, кетчуп, томаты, шрирача, кориандр, чеснок, унаги. Островато-сладкий."
+  },
+  {
+    "section": "Кухня",
+    "category": "Соусы",
+    "name": "Наршараб",
+    "price": "",
+    "description": "Гранат, сахар, пектин."
+  },
+  {
+    "section": "Кухня",
+    "category": "Соусы",
+    "name": "Аджика",
+    "price": "",
+    "description": "Пилати, орегано, хмели-сунели, базилик, кинза, чеснок, острая аджика, соль, сахар."
+  },
+  {
+    "section": "Кухня",
+    "category": "Соусы",
+    "name": "Тар-тар",
+    "price": "",
+    "description": "Майонез, шалот, зелень, чеснок, корнишоны."
+  },
+  {
+    "section": "Детское меню",
+    "category": "Паста-конструктор",
+    "name": "Паста-конструктор",
+    "price": "810",
+    "description": "Выбери пасту: спагетти, фузилли, казаречче. Основа: куриная грудка или мясные фрикадельки. Соус: томатный, сливочный или сыр."
+  },
+  {
+    "section": "Детское меню",
+    "category": "Горячие блюда",
+    "name": "Куриный суп с фрикадельками",
+    "price": "380",
+    "description": "Куриный бульон, фрикадельки из филе и бедра курицы с пармезаном, макароны-буквы, морковь, лук."
+  },
+  {
+    "section": "Детское меню",
+    "category": "Горячие блюда",
+    "name": "Котлета куриная «Эскимо»",
+    "price": "490",
+    "description": "Куриное филе и бедро, лук, батон, сливки, тимьян, растительное и оливковое масло."
+  },
+  {
+    "section": "Детское меню",
+    "category": "Горячие блюда",
+    "name": "Куриные стрипсы",
+    "price": "600",
+    "description": "Куриная грудка, мука, льезон (яйцо, соль, специи), панировка."
+  },
+  {
+    "section": "Детское меню",
+    "category": "Горячие блюда",
+    "name": "Куриная грудка",
+    "price": "560",
+    "description": "Филе курицы су-вид, чеснок, тимьян, оливковое масло, сахар."
+  },
+  {
+    "section": "Детское меню",
+    "category": "Горячие блюда",
+    "name": "Бургер из говядины",
+    "price": "1090",
+    "description": "Котлета из говяжьей вырезки и огузка, шалот, специи, вустерский соус, кетчуп; булочка, романо, помидоры, огурцы, бургерный соус."
+  },
+  {
+    "section": "Детское меню",
+    "category": "Горячие блюда",
+    "name": "Пельмени из говядины",
+    "price": "710",
+    "description": "Тесто: мука, соль, вода. Фарш: говяжья вырезка, лук, сливочное масло, соль и перец."
+  },
+  {
+    "section": "Детское меню",
+    "category": "Гарниры",
+    "name": "Паста (спагетти, фузилли, казаречче)",
+    "price": "340",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Гарниры",
+    "name": "Домашний картофель фри с кетчупом",
+    "price": "550",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Гарниры",
+    "name": "Домашний батат фри с сырным соусом",
+    "price": "590",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Гарниры",
+    "name": "Брокколи на пару",
+    "price": "580",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Гарниры",
+    "name": "Картофельное пюре",
+    "price": "340",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Гарниры",
+    "name": "Кукуруза",
+    "price": "360",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Напитки и сладкое",
+    "name": "Морс",
+    "price": "300",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Напитки и сладкое",
+    "name": "Милкшейк",
+    "price": "390",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Напитки и сладкое",
+    "name": "Какао со взбитыми сливками",
+    "price": "460",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Напитки и сладкое",
+    "name": "Блин (1 шт.)",
+    "price": "100",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Напитки и сладкое",
+    "name": "Сметана",
+    "price": "170",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Напитки и сладкое",
+    "name": "Ягодный джем",
+    "price": "300",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Напитки и сладкое",
+    "name": "Шоколадная паста",
+    "price": "250",
+    "description": ""
+  },
+  {
+    "section": "Детское меню",
+    "category": "Полезные снеки",
+    "name": "Овощные палочки",
+    "price": "290",
+    "description": "Сельдерей, морковь, огурцы."
+  },
+  {
+    "section": "Детское меню",
+    "category": "Полезные снеки",
+    "name": "Фрукты",
+    "price": "450",
+    "description": ""
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Виссиния",
+    "price": "950",
+    "description": "Вишня, красный апельсин, пряные ноты джина и кремант; креплёная сливочная текстура."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Фрутти физз",
+    "price": "950",
+    "description": "Мармелад, сухой вермут, игристое."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Физз с базиликом и ментолом",
+    "price": "950",
+    "description": "Водка, базилик, свежие специи, ментоловое послевкусие."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Гранд Беллини",
+    "price": "950",
+    "description": "Пюре белого персика, сакура, розовый кактус и Prosecco."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Порн Стар с миндалем",
+    "price": "950",
+    "description": "Водка SIBERIAN EXPRESS, маракуйя и миндаль."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Майяуэль",
+    "price": "950",
+    "description": "Текила, сладкий вермут, манго, жёлтый перец, агава."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Майори",
+    "price": "950",
+    "description": "Горчинка биттера, сочный лимон, крафтовый тоник."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Фатаморгана",
+    "price": "950",
+    "description": "Джин, цитрусовый ананас и яркие домашние оттенки."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Тамарилло",
+    "price": "950",
+    "description": "Красный марокканский фрукт с белым ромом и Aperol."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Айворси",
+    "price": "950",
+    "description": "Джин, персиковый ликёр, цитрусовый биттер, лимон."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Коктейли · 950 ₽",
+    "name": "Дейзи",
+    "price": "950",
+    "description": "Сухой джин, гранат, кисло-сладкий соус и солёная нота."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Моктейли · 750 ₽",
+    "name": "Энзони",
+    "price": "750",
+    "description": "Безалкогольный джин, биттер, грейпфрут, кисло-сладкий баланс."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Моктейли · 750 ₽",
+    "name": "Смоки Палома",
+    "price": "750",
+    "description": "Тонкие ноты маракуйи и каламанси, лёгкая копчёность от мескаля и тоника (безалкогольный вариант)."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Моктейли · 750 ₽",
+    "name": "Абсент 75",
+    "price": "750",
+    "description": "Безалкогольный абсент, травянистый вкус, игристые пузырьки."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Моктейли · 750 ₽",
+    "name": "Гарибальди",
+    "price": "750",
+    "description": "Аперитивный биттер, свежий апельсиновый сок."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Моктейли · 750 ₽",
+    "name": "Виолетта",
+    "price": "750",
+    "description": "Безалкогольное вино, джин, кордиал голубика/васильки."
+  },
+  {
+    "section": "Коктейльная карта",
+    "category": "Моктейли · 750 ₽",
+    "name": "Спритц",
+    "price": "750",
+    "description": "Лёгкая горчинка и апельсин."
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Эспрессо",
+    "price": "300",
+    "description": "",
+    "subcategory": "Кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Ристретто",
+    "price": "300",
+    "description": "",
+    "subcategory": "Кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Американо",
+    "price": "300",
+    "description": "",
+    "subcategory": "Кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Капучино",
+    "price": "450",
+    "description": "",
+    "subcategory": "Кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Латте",
+    "price": "450",
+    "description": "",
+    "subcategory": "Кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Матча латте",
+    "price": "600",
+    "description": "",
+    "subcategory": "Кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Двойной эспрессо",
+    "price": "550",
+    "description": "",
+    "subcategory": "Кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Флэт уайт",
+    "price": "450",
+    "description": "",
+    "subcategory": "Кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Раф-кофе",
+    "price": "450",
+    "description": "",
+    "subcategory": "Кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Клюквенный морс 250 мл / 1 л",
+    "price": "290 / 800",
+    "description": "",
+    "subcategory": "Безалкогольные напитки"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Фреш 200 мл",
+    "price": "650",
+    "description": "Апельсин, яблоко, морковь, грейпфрут или сельдерей.",
+    "subcategory": "Безалкогольные напитки"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Сок Yoga 200 мл",
+    "price": "430",
+    "description": "Яблоко, вишня, персик, томат, апельсин.",
+    "subcategory": "Безалкогольные напитки"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Вода Боржоми 330 мл",
+    "price": "450",
+    "description": "",
+    "subcategory": "Безалкогольные напитки"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Вода RusseQuelle 500 / 750 мл",
+    "price": "450 / 750",
+    "description": "",
+    "subcategory": "Безалкогольные напитки"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Coca-Cola / Coca-Cola Zero 200 мл",
+    "price": "450",
+    "description": "",
+    "subcategory": "Безалкогольные напитки"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Gardenist Tonic / Ginger Ale 200 мл",
+    "price": "450",
+    "description": "",
+    "subcategory": "Безалкогольные напитки"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Смородина с красным апельсином (200 мл / 1 л)",
+    "price": "490 / 1250",
+    "description": "",
+    "subcategory": "Лимонады"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Папайя с земляникой (200 мл / 1 л)",
+    "price": "490 / 1250",
+    "description": "",
+    "subcategory": "Лимонады"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Белый персик с грейпфрутом (200 мл / 1 л)",
+    "price": "490 / 1250",
+    "description": "",
+    "subcategory": "Лимонады"
+  },
+  {
+    "section": "Напитки",
+    "category": "Лимонады",
+    "name": "Джекфрут с маракуйей (200 мл / 1 л)",
+    "price": "490 / 1250",
+    "description": "",
+    "subcategory": "Лимонады"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Cocchi Aperitivo Americano",
+    "price": "750",
+    "description": "80 мл",
+    "subcategory": "Алкоголь · вермут и аперитивы"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Cocchi Storico Vermouth di Torino",
+    "price": "750",
+    "description": "80 мл",
+    "subcategory": "Алкоголь · вермут и аперитивы"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Cocchi Vermouth di Torino Extra Dry",
+    "price": "750",
+    "description": "80 мл",
+    "subcategory": "Алкоголь · вермут и аперитивы"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Campari Bitter",
+    "price": "500",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · вермут и аперитивы"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Aperol",
+    "price": "500",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · вермут и аперитивы"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Great Britain Tanqueray London Dry",
+    "price": "750",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · джин и текила"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Ukiyo Japanese Yuzu",
+    "price": "900",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · джин и текила"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Bobby’s Schiedam Jenever",
+    "price": "700",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · джин и текила"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Espolon Blanco",
+    "price": "700",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · джин и текила"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Espolon Reposado",
+    "price": "750",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · джин и текила"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Don Julio Blanco",
+    "price": "1300",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · джин и текила"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Angostura Reserva",
+    "price": "550",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Angostura Tamboo Spiced",
+    "price": "550",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Legendario Elixir de Cuba (34°)",
+    "price": "550",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Matusalem Insolito Wine Cask",
+    "price": "850",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Zacapa Solera Gran Reserva 23",
+    "price": "1350",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Чистые росы",
+    "price": "400",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Spelta",
+    "price": "650",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "SIBERIAN EXPRESS",
+    "price": "400",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "GASTRONOM №1",
+    "price": "350",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "GASTRONOM №4",
+    "price": "350",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "GASTRONOM №7",
+    "price": "350",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Белуга 21 век",
+    "price": "350",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Белуга 16 век",
+    "price": "370",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Mont Blanc",
+    "price": "550",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · ром и водка"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Pere Magloire V.S.O.P.",
+    "price": "900",
+    "description": "Кальвадос, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Camus VS",
+    "price": "900",
+    "description": "Коньяк, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Martell Rare V.S.O.P.",
+    "price": "1300",
+    "description": "Коньяк, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Camus XO",
+    "price": "2900",
+    "description": "Коньяк, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Ararat",
+    "price": "490",
+    "description": "Бренди, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Baron G. Legrand XO Bas Armagnac",
+    "price": "1600",
+    "description": "Арманьяк, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Chivas Regal 12 Years Old",
+    "price": "900",
+    "description": "Виски, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Auchentoshan American Oak",
+    "price": "800",
+    "description": "Шотландский виски, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Glenmorangie The Original 12 Years Old",
+    "price": "900",
+    "description": "Шотландский виски, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Aberlour 12 Years Old",
+    "price": "1100",
+    "description": "Шотландский виски, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Monkey Shoulder",
+    "price": "850",
+    "description": "Шотландский виски, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Tamnavulin 12 Years Old",
+    "price": "1500",
+    "description": "Шотландский виски, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Lagavulin 16 Years Old",
+    "price": "1900",
+    "description": "Виски Islay, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Laphroaig 10 Years Old",
+    "price": "1500",
+    "description": "Виски Islay, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Jack Daniel’s",
+    "price": "750",
+    "description": "Американский виски, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Maker’s Mark",
+    "price": "850",
+    "description": "Американский виски, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Hinch Small Batch",
+    "price": "800",
+    "description": "Ирландский виски, 40 мл",
+    "subcategory": "Алкоголь · виски и коньяк"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Chardonnay di Nonino",
+    "price": "1100",
+    "description": "Граппа, 40 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Il Pirus di Nonino",
+    "price": "1400",
+    "description": "Граппа, 40 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Bailey’s",
+    "price": "500",
+    "description": "Ликёр, 40 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Nitta",
+    "price": "600",
+    "description": "Ликёр, 40 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Becherovka",
+    "price": "500",
+    "description": "Ликёр, 40 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Jägermeister",
+    "price": "550",
+    "description": "Ликёр, 40 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Absinthe",
+    "price": "550",
+    "description": "40 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Kirin (?)",
+    "price": "750",
+    "description": "Пиво, 330 мл; название требует уточнения по фото",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Leffe Blond",
+    "price": "750",
+    "description": "Пиво, 330 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Corona Extra",
+    "price": "750",
+    "description": "Пиво, 330 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Blanche de Bruxelles",
+    "price": "750",
+    "description": "Пиво, 330 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Petrus Dubbel",
+    "price": "750",
+    "description": "Пиво, 330 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Dow’s Tawny Port 10 years old",
+    "price": "1100",
+    "description": "Порто, 75 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Алкоголь",
+    "name": "Valdespino Pedro Ximenez El Candado",
+    "price": "1100",
+    "description": "Херес, 75 мл",
+    "subcategory": "Алкоголь · прочее"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Чёрный",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Ассам",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Эрл Грей",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Пуэр 17 лет",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Зелёный",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Сен-Жасмин",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Малина Нью Эрл",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Травяной",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Гречишный",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Каркаде",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Улун",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Да Хун Пао",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Те Гуань Инь",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Женьшень Ча Ван",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Молочный улун",
+    "price": "650",
+    "description": "Чайник 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Летний ягодный",
+    "price": "750",
+    "description": "Фруктовый чай, 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Апельсиновый пунш",
+    "price": "750",
+    "description": "Фруктовый чай, 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Чай",
+    "name": "Облепиховый с цитрусом",
+    "price": "750",
+    "description": "Фруктовый чай, 600 мл",
+    "subcategory": "Чай и фруктовый чай"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Айс латте",
+    "price": "450",
+    "description": "",
+    "subcategory": "Холодный кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Айс латте на альтернативном молоке",
+    "price": "550",
+    "description": "",
+    "subcategory": "Холодный кофе"
+  },
+  {
+    "section": "Напитки",
+    "category": "Кофе",
+    "name": "Кофе Аффогато",
+    "price": "550",
+    "description": "",
+    "subcategory": "Холодный кофе"
+  }
+];const WINE=[];
+function escapeHTML(s){return String(s||'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
+
+const WINE_CATALOG=[
+  {
+    "category": "Игристое · по бокалам",
+    "name": "Cava Castell Llord",
+    "country": "Испания",
+    "price": "800",
+    "volume": "150 мл",
+    "taste": "Игристое, обычно с освежающей кислотностью и цитрусовыми оттенками.",
+    "pair": "Аперитив, морепродукты"
+  },
+  {
+    "category": "Игристое · по бокалам",
+    "name": "Prosecco Bruni",
+    "country": "Италия",
+    "price": "850",
+    "volume": "150 мл",
+    "taste": "Лёгкий фруктовый стиль просекко, свежесть и мягкие пузырьки.",
+    "pair": "Закуски, лёгкие салаты"
+  },
+  {
+    "category": "Игристое · по бокалам",
+    "name": "Grande Cuvée 1er Cru de Limoux",
+    "country": "Франция",
+    "price": "1500",
+    "volume": "150 мл",
+    "taste": "Игристое из Лиму: свежий стиль с возможными яблочными и хлебными нотами.",
+    "pair": "Рыба, закуски"
+  },
+  {
+    "category": "Белое · по бокалам",
+    "name": "Delle Venezie Pinot Grigio Cielo",
+    "country": "Италия",
+    "price": "800",
+    "volume": "150 мл",
+    "taste": "Пино гриджо обычно лёгкое, сухое, с цитрусовыми и грушевыми нотами.",
+    "pair": "Салаты, белая рыба"
+  },
+  {
+    "category": "Белое · по бокалам",
+    "name": "Vinho Verde Mare & Grill Quintas das Arcas",
+    "country": "Португалия",
+    "price": "850",
+    "volume": "150 мл",
+    "taste": "Винью верде обычно свежее, лёгкое, с яркой кислотностью.",
+    "pair": "Морепродукты, салаты"
+  },
+  {
+    "category": "Белое · по бокалам",
+    "name": "Riesling Langelois Weingut Rudolf Rabl",
+    "country": "Австрия",
+    "price": "950",
+    "volume": "150 мл",
+    "taste": "Рислинг часто раскрывается цитрусами, зелёным яблоком и минеральностью.",
+    "pair": "Рыба, пряные блюда"
+  },
+  {
+    "category": "Белое · по бокалам",
+    "name": "Pacific Creek Sauvignon Blanc Marlborough",
+    "country": "Новая Зеландия",
+    "price": "950",
+    "volume": "150 мл",
+    "taste": "Совиньон блан из Мальборо часто имеет ноты крыжовника, лайма и трав.",
+    "pair": "Козий сыр, морепродукты"
+  },
+  {
+    "category": "Белое · по бокалам",
+    "name": "Chardonnay Crab & More",
+    "country": "США",
+    "price": "950",
+    "volume": "150 мл",
+    "taste": "Шардоне обычно имеет яблочные и фруктовые оттенки; полнота зависит от выдержки.",
+    "pair": "Рыба, птица"
+  },
+  {
+    "category": "Розовое · по бокалам",
+    "name": "Rosé Le Grand Noir",
+    "country": "Франция",
+    "price": "900",
+    "volume": "150 мл",
+    "taste": "Розовое вино обычно сочетает ягодные ноты и освежающий вкус.",
+    "pair": "Салаты, лёгкие закуски"
+  },
+  {
+    "category": "Красное · по бокалам",
+    "name": "Malbec Trapiche",
+    "country": "Аргентина",
+    "price": "800",
+    "volume": "150 мл",
+    "taste": "Мальбек часто даёт оттенки сливы, тёмных ягод и мягкие танины.",
+    "pair": "Говядина, гриль"
+  },
+  {
+    "category": "Красное · по бокалам",
+    "name": "Shiraz Noseworthy",
+    "country": "Австралия",
+    "price": "850",
+    "volume": "150 мл",
+    "taste": "Шираз обычно насыщенный, с тёмными ягодами и пряными нотами.",
+    "pair": "Стейки, мясо на гриле"
+  },
+  {
+    "category": "Красное · по бокалам",
+    "name": "Chianti Colli Senesi",
+    "country": "Италия",
+    "price": "850",
+    "volume": "150 мл",
+    "taste": "Кьянти обычно сухое, с вишнёвой кислотностью и травяными нотами.",
+    "pair": "Пицца, паста с томатами"
+  },
+  {
+    "category": "Красное · по бокалам",
+    "name": "Fortius Reserva Bodegas Valcarlos",
+    "country": "Испания",
+    "price": "850",
+    "volume": "150 мл",
+    "taste": "Испанское красное резерва часто отличается зрелыми фруктами и пряностями.",
+    "pair": "Мясо, выдержанные сыры"
+  },
+  {
+    "category": "Красное · по бокалам",
+    "name": "Le Grand Noir Pinot Noir",
+    "country": "Франция",
+    "price": "900",
+    "volume": "150 мл",
+    "taste": "Пино нуар обычно легче по телу, с красными ягодами и деликатными танинами.",
+    "pair": "Птица, грибы"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Gewurztraminer Alsace Trimbach",
+    "country": "Франция",
+    "price": "10500",
+    "volume": "750 мл",
+    "taste": "Гевюрцтраминер часто ароматный: личи, роза, специи.",
+    "pair": "Азиатские блюда, пряные закуски"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Muscadet Sèvre et Maine Les Roches Noires",
+    "country": "Франция",
+    "price": "5500",
+    "volume": "750 мл",
+    "taste": "Мюскаде обычно сухое, минеральное, с высокой свежестью.",
+    "pair": "Устрицы, морепродукты"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Sancerre Les Baronnes Blanc Henri Bourgeois",
+    "country": "Франция",
+    "price": "14000",
+    "volume": "750 мл",
+    "taste": "Сансер из совиньон блана обычно цитрусовый, травянистый и минеральный.",
+    "pair": "Рыба, морепродукты"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Saint-Bris Jean-Marc Brocard",
+    "country": "Франция",
+    "price": "7500",
+    "volume": "750 мл",
+    "taste": "Сен-Бри обычно свежее белое с травянистыми и цитрусовыми оттенками.",
+    "pair": "Рыба, салаты"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Chablis Sainte Claire Jean-Marc Brocard",
+    "country": "Франция",
+    "price": "9600",
+    "volume": "750 мл",
+    "taste": "Шабли из шардоне обычно сухое, с цитрусами и минеральной свежестью.",
+    "pair": "Устрицы, белая рыба"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Chablis Premier Cru Montmains Jean-Marc Brocard",
+    "country": "Франция",
+    "price": "15900",
+    "volume": "750 мл",
+    "taste": "Шабли Premier Cru: более сложный минеральный стиль шардоне.",
+    "pair": "Морепродукты, палтус"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Pouilly-Fumé Henri Bourgeois",
+    "country": "Франция",
+    "price": "16500",
+    "volume": "750 мл",
+    "taste": "Пуйи-Фюме из совиньон блана обычно сочетает цитрус и минеральность.",
+    "pair": "Рыба, морепродукты"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Riesling Langelois Weingut Rudolf Rabl",
+    "country": "Австрия",
+    "price": "4900",
+    "volume": "750 мл",
+    "taste": "Рислинг: цитрусовая свежесть, яблоко, возможная минеральность.",
+    "pair": "Рыба, острые закуски"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Grüner Veltliner Langelois Rabl",
+    "country": "Австрия",
+    "price": "4900",
+    "volume": "750 мл",
+    "taste": "Грюнер вельтлинер часто имеет яблочные и перечные оттенки.",
+    "pair": "Овощи, рыба"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Marqués de Riscal Rueda",
+    "country": "Испания",
+    "price": "5900",
+    "volume": "750 мл",
+    "taste": "Руэда обычно сухая, свежая, с цитрусами и травяными нотами.",
+    "pair": "Салаты, морепродукты"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Medusa Albariño Rías Baixas",
+    "country": "Испания",
+    "price": "6500",
+    "volume": "750 мл",
+    "taste": "Альбариньо обычно яркое, с цитрусами и солоноватой свежестью.",
+    "pair": "Морепродукты, рыба"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Soave Classico Santi",
+    "country": "Италия",
+    "price": "5300",
+    "volume": "750 мл",
+    "taste": "Соаве обычно лёгкое и сухое, с белыми цветами и фруктами.",
+    "pair": "Рыба, лёгкие закуски"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Priara Pinot Grigio Cielo",
+    "country": "Италия",
+    "price": "6500",
+    "volume": "750 мл",
+    "taste": "Пино гриджо: свежий, сухой, с фруктовыми и цитрусовыми нотами.",
+    "pair": "Салаты, рыба"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Chardonnay Collezione Marco Felluga",
+    "country": "Италия",
+    "price": "9500",
+    "volume": "750 мл",
+    "taste": "Шардоне обычно с яблочными и цитрусовыми оттенками.",
+    "pair": "Птица, паста"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Carolina Reserva Chardonnay",
+    "country": "Чили",
+    "price": "3900",
+    "volume": "750 мл",
+    "taste": "Шардоне может сочетать тропические фрукты и сливочные оттенки.",
+    "pair": "Птица, рыба"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Chenin Blanc La Capra",
+    "country": "ЮАР",
+    "price": "4800",
+    "volume": "750 мл",
+    "taste": "Шенен блан часто имеет яблочные, грушевые и медовые оттенки.",
+    "pair": "Птица, сыры"
+  },
+  {
+    "category": "Белое · бутылки",
+    "name": "Sauvignon Blanc Chapel Peak Marlborough",
+    "country": "Новая Зеландия",
+    "price": "12900",
+    "volume": "750 мл",
+    "taste": "Совиньон блан из Мальборо обычно яркий, травянистый и цитрусовый.",
+    "pair": "Морепродукты, салаты"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Château Margaux Grand Cru Classé Margaux 2007",
+    "country": "Франция",
+    "price": "195000",
+    "volume": "750 мл",
+    "taste": "Бордоский купаж: сложный стиль с тёмными ягодами, древесными и пряными оттенками.",
+    "pair": "Премиальные стейки"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Nipozzano Riserva Frescobaldi",
+    "country": "Италия",
+    "price": "8700",
+    "volume": "750 мл",
+    "taste": "Кьянти Руфина: обычно вишня, пряности и выраженная структура.",
+    "pair": "Мясо, паста"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Brunello di Montalcino Banfi",
+    "country": "Италия",
+    "price": "17500",
+    "volume": "750 мл",
+    "taste": "Брунелло из санджовезе обычно полнотелое, с вишней, кожей и пряностями.",
+    "pair": "Говядина, выдержанные сыры"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Toscana Ornellaia Tenuta dell’Ornellaia",
+    "country": "Италия",
+    "price": "150000",
+    "volume": "750 мл",
+    "taste": "Супертосканское красное: плотный структурный стиль.",
+    "pair": "Стейки, мясо"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Ripassa Valpolicella Superiore Zenato",
+    "country": "Италия",
+    "price": "10900",
+    "volume": "750 мл",
+    "taste": "Вальполичелла рипассо часто с вишней, сухофруктами и пряностями.",
+    "pair": "Мясо, сыры"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Mia Primitivo",
+    "country": "Италия",
+    "price": "5500",
+    "volume": "750 мл",
+    "taste": "Примитиво часто насыщенное, со спелой сливой и ягодами.",
+    "pair": "Гриль, мясо"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Regaleali Nero d’Avola",
+    "country": "Италия",
+    "price": "6500",
+    "volume": "750 мл",
+    "taste": "Неро д’Авола обычно с тёмными ягодами и мягкими пряностями.",
+    "pair": "Паста, мясо"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Matsu El Recio",
+    "country": "Испания",
+    "price": "8500",
+    "volume": "750 мл",
+    "taste": "Красное из Торо обычно мощное, с тёмными ягодами и танинами.",
+    "pair": "Стейки, гриль"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Protos Reserva Bodegas Protos",
+    "country": "Испания",
+    "price": "10900",
+    "volume": "750 мл",
+    "taste": "Темпранильо резерва: обычно спелые ягоды, ваниль и специи.",
+    "pair": "Говядина, сыры"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Santa Carolina Gran Reserva Carmenere",
+    "country": "Чили",
+    "price": "5300",
+    "volume": "750 мл",
+    "taste": "Карменер часто даёт сливу, зелёный перец и пряности.",
+    "pair": "Мясо на гриле"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Pinotage Rooibos Ridge Fairview",
+    "country": "ЮАР",
+    "price": "5500",
+    "volume": "750 мл",
+    "taste": "Пинотаж часто с тёмными ягодами и дымными нотами.",
+    "pair": "Гриль, мясо"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Cabernet Sauvignon Luigi Bosca",
+    "country": "Аргентина",
+    "price": "7200",
+    "volume": "750 мл",
+    "taste": "Каберне совиньон обычно структурное, с чёрной смородиной и танинами.",
+    "pair": "Стейки"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Shiraz Angel’s Share Two Hands",
+    "country": "Австралия",
+    "price": "12000",
+    "volume": "750 мл",
+    "taste": "Австралийский шираз: насыщенный, с ежевикой и пряностями.",
+    "pair": "Рибай, гриль"
+  },
+  {
+    "category": "Красное · бутылки",
+    "name": "Pinot Noir Nature in Concert De Wetshof",
+    "country": "ЮАР",
+    "price": "4200",
+    "volume": "750 мл",
+    "taste": "Пино нуар: красные ягоды и мягкие танины.",
+    "pair": "Птица, грибы"
+  }
+];
+let wineSearch="", wineFilter="Все",wineOpen=new Set();
+function btn(txt,fn,css=''){return `<button class="${css}" data-action="${fn}">${txt}</button>`}
+function setView(v,c='',cat=''){view=v;current=c;category=cat;search='';expanded.clear();render();scrollTo(0,0)}
+function getCategories(s){const cats=[...new Set(ITEMS.filter(i=>i.section===s).map(i=>i.category))];return s==='Напитки'?['Алкоголь','Лимонады','Чай','Кофе'].filter(c=>cats.includes(c)):cats}
+function header(){return `<header><div class="top"><button data-action="home">⌂</button><div class="brand"><span class="smallcaps">Помощник официанта</span><strong>ЗЕЛЕНОЕ ОЗЕРО</strong></div><span style="color:#b8a880">✦</span></div></header>`}
+function home(){return `<div class="hero"><img src="${LOGO}" alt="Логотип Зеленое озеро"><div class="smallcaps">Загородный клуб · ресторан · пляж</div><h1>ЗЕЛЕНОЕ ОЗЕРО</h1><div class="line"></div><p>ПОМОЩНИК ОФИЦИАНТА</p></div><h2 class="sectionTitle">Разделы меню</h2><div class="tiles">${btn('<span>♨</span><b>Кухня</b><small>Блюда, составы и цены</small><i class="arrow">↗</i>','section:Кухня','tile')}${btn('<span>♧</span><b>Детское меню</b><small>Горячее, гарниры, сладкое</small><i class="arrow">↗</i>','section:Детское меню','tile')}${btn('<span>♢</span><b>Бар</b><small>Коктейли, вина и напитки</small><i class="arrow">↗</i>','bar','tile wide')}</div><p class="copyright">✦ ЗЕЛЕНОЕ ОЗЕРО ✦</p>`}
+function bar(){return `<div class="crumb">Главная / Бар</div><h1 class="sectionTitle">Бар</h1><p class="sub">Выбери нужную карту.</p><div class="tiles">${btn('<span>♧</span><b>Коктейльная карта</b><small>Коктейли и моктейли</small>','section:Коктейльная карта','tile')}${btn('<span>♢</span><b>Винная карта</b><small>Каталог вин, вкусы и гастропары</small>','wine','tile')}${btn('<span>☕</span><b>Напитки</b><small>Алкоголь, лимонады, чай, кофе</small>','section:Напитки','tile wide')}</div>`}
+function section(){let cats=getCategories(current);return `<div class="crumb">Главная / ${escapeHTML(current)}</div><h1 class="sectionTitle">${escapeHTML(current)}</h1><p class="sub">Выбери категорию или найди позицию по названию и ингредиентам.</p><div class="search"><span>⌕</span><input id="search" placeholder="Поиск по всему разделу…" value="${escapeHTML(search)}"></div>${search?entryList(ITEMS.filter(i=>i.section===current&&match(i)),false):`<div class="categorygrid">${cats.map(c=>btn(`<strong>${escapeHTML(c)}</strong><small>${ITEMS.filter(i=>i.section===current&&i.category===c).length} поз.</small>`,'category:'+encodeURIComponent(c),'cat')).join('')}</div>`}`}
+function match(i){let s=search.toLocaleLowerCase('ru');return (i.name+' '+i.description+' '+i.category).toLocaleLowerCase('ru').includes(s)}
+function entryList(arr,showName=true){return `<p class="count">${arr.length} позиций</p><div class="entries">${arr.length?arr.map(i=>{let id=ITEMS.indexOf(i),on=expanded.has(id);return `<article class="entry ${on?'is-open':''}"><button data-action="expand:${id}" aria-expanded="${on}" aria-controls="detail-${id}"><span class="name">${escapeHTML(i.name)}</span>${i.price?`<span class="price">${escapeHTML(i.price)} ₽</span>`:''}<span class="entry-toggle" aria-hidden="true">＋</span></button><div class="accordion" id="detail-${id}" aria-hidden="${!on}"><div class="accordion-inner"><div class="description">${i.subcategory&&i.section==='Напитки'?`<div class="subtype">${escapeHTML(i.subcategory.replace(/^Алкоголь · /,'').replace('Чай и фруктовый чай','Чай').replace('Безалкогольные напитки','Другие безалкогольные напитки'))}</div>`:''}${i.description?escapeHTML(i.description):'<span class="tag">Уточнить состав</span>'}${i.category==='Паста-конструктор'?`<div class="note">Паста + основа + соус на выбор. Цена общая — 810 ₽.</div>`:''}</div></div></div></article>`}).join(''):'<div class="empty">Ничего не найдено</div>'}</div>`}
+function categoryView(){let filtered=ITEMS.filter(i=>i.section===current&&i.category===category&&match(i));return `<div class="crumb">Главная / ${escapeHTML(current)} / ${escapeHTML(category)}</div>${btn('← Ко всем категориям','section:'+current,'back')}<h1 class="sectionTitle">${escapeHTML(category)}</h1><div class="search"><span>⌕</span><input id="search" placeholder="Найти позицию или ингредиент…" value="${escapeHTML(search)}"></div>${entryList(filtered)}`}
+function wine(){
+ const categories=['Все',...new Set(WINE_CATALOG.map(x=>x.category))];
+ const q=wineSearch.trim().toLocaleLowerCase('ru');
+ const wines=WINE_CATALOG.map((x,i)=>({...x,id:i})).filter(x=>(wineFilter==='Все'||x.category===wineFilter)&&(!q||(x.name+' '+x.country+' '+x.category+' '+x.taste+' '+x.pair).toLocaleLowerCase('ru').includes(q)));
+ return `<div class="crumb">Главная / Бар / Винная карта</div><h1 class="sectionTitle">Винная карта</h1>
+ <p class="sub">Интерактивные карточки вин, вкусовые ориентиры и сочетания с блюдами.</p>
+ <div class="note">Описания вкуса и сочетаний — ориентировочные рекомендации по сорту или региону, не дегустационные заметки производителя. Проверяй точный стиль и наличие по бутылке. Каталог ещё сверяется с печатной картой.</div>
+ <div class="search"><span>⌕</span><input id="wineSearch" placeholder="Название, страна, сорт, блюдо…" value="${escapeHTML(wineSearch)}"></div>
+ <div class="chiprow">${categories.map(c=>`<button class="chip ${wineFilter===c?'selected':''}" data-action="winefilter:${encodeURIComponent(c)}">${escapeHTML(c)}</button>`).join('')}</div>
+ <p class="count">${wines.length} вин в каталоге · 150 или 750 мл</p><div class="entries">${wines.map(x=>`<article class="entry ${wineOpen.has(x.id)?'is-open':''}"><button data-action="wineexpand:${x.id}" aria-expanded="${wineOpen.has(x.id)}"><span class="name">${escapeHTML(x.name)}<small style="display:block;font-weight:400;color:#64736f">${escapeHTML(x.country)} · ${escapeHTML(x.volume)}</small></span><span class="price">${escapeHTML(x.price)} ₽</span><span class="entry-toggle">＋</span></button><div class="accordion"><div class="accordion-inner"><div class="description"><strong>Вкус и аромат:</strong> ${escapeHTML(x.taste||'Уточнить описание')}<br><strong>С чем предложить:</strong> ${escapeHTML(x.pair||'Уточнить сочетание')}<div class="hint">Рекомендация ориентировочная. Информация из меню: название, страна, цена и объём.</div></div></div></div></article>`).join('')}</div>
+ `;
+}
+function render(focus=false){APP.innerHTML=header()+`<main class="wrap">${view==='home'?home():view==='bar'?bar():view==='wine'?wine():view==='section'?section():categoryView()}</main>`;let wi=document.getElementById('wineSearch');if(wi){wi.addEventListener('input',e=>{wineSearch=e.target.value;const pos=e.target.selectionStart;render();const n=document.getElementById('wineSearch');n.focus();n.setSelectionRange(pos,pos)})}let input=document.getElementById('search');if(input){input.addEventListener('input',e=>{const caret=e.target.selectionStart;search=e.target.value;render(true);let n=document.getElementById('search');n.focus();n.setSelectionRange(caret,caret)});if(focus)input.focus({preventScroll:true})}}
+function toggleEntry(id){const el=document.querySelector(`[data-action="expand:${id}"]`);if(!el)return;const article=el.closest('.entry');const detail=article.querySelector('.accordion');const open=!expanded.has(id);if(open)expanded.add(id);else expanded.delete(id);article.classList.toggle('is-open',open);el.setAttribute('aria-expanded',String(open));detail.setAttribute('aria-hidden',String(!open));}
+document.addEventListener('click',e=>{let el=e.target.closest('[data-action]');if(!el)return;let a=el.dataset.action;if(a==='home')setView('home');else if(a==='bar')setView('bar');else if(a==='wine')setView('wine');else if(a.startsWith('section:'))setView('section',a.slice(8));else if(a.startsWith('category:'))setView('category',current,decodeURIComponent(a.slice(9)));else if(a.startsWith('expand:')){let id=Number(a.slice(7));toggleEntry(id)}else if(a.startsWith('winefilter:')){wineFilter=decodeURIComponent(a.slice(11));wineOpen.clear();render()}else if(a.startsWith('wineexpand:')){let id=Number(a.slice(11));wineOpen.has(id)?wineOpen.delete(id):wineOpen.add(id);let card=el.closest('.entry');card.classList.toggle('is-open',wineOpen.has(id));el.setAttribute('aria-expanded',String(wineOpen.has(id)))}else if(a.startsWith('zoom:')){document.getElementById('bigpic').src=WINE[Number(a.slice(5))].image;document.getElementById('viewer').style.display='block'}});render();
+</script></body></html>
